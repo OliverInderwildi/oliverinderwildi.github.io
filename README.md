@@ -3,10 +3,10 @@
 This repository hosts my personal homepage using **GitHub Pages**.
 
 ## 🌍 Live Site
-You can visit the homepage here: [yourusername.github.io](https://yourusername.github.io)
+You can visit the homepage here: oliverinderwildi.github.io](https://oliverinderwildi.github.io)
 
 ## 📚 About Me
-I am an **author, researcher, and speaker**. My work focuses on [your key topics].  
+I am an **author, researcher, and speaker**. My work focuses on advanbced digital technologies (AI, ML, quantum computing...) to solve global challenges such as climate change, economic underdevelopment, resource use and many others.   
 Find my books, research, and media here.
 
 ## 🔗 Links
