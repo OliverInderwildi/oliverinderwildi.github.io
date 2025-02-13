@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Google Scholar Citations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+  </style>
+  <script>
+    // When the page loads, fetch the latest citation data
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('/citations.json')  // Adjust the path to your JSON file as needed.
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Assuming your JSON has keys: citationCount, hIndex, i10Index
+          document.getElementById('citationCount').innerText = data.citationCount;
+          document.getElementById('hIndex').innerText = data.hIndex;
+          document.getElementById('i10Index').innerText = data.i10Index;
+        })
+        .catch(error => console.error('Error fetching citation data:', error));
+    });
+  </script>
+</head>
+<body>
+  <h1>My Google Scholar Citations</h1>
+  <p>Total Citations: <span id="citationCount">Loading...</span></p>
+  <p>h-index: <span id="hIndex">Loading...</span></p>
+  <p>i10-index: <span id="i10Index">Loading...</span></p>
+</body>
+</html>
