@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      let chart, chartData, options;
+
+      function drawChart() {
+        console.log("Drawing chart...");
+
+        try {
+          chartData = google.visualization.arrayToDataTable([
+            ["Category", "Value", { role: "tooltip", p: { html: true } }],
+            ["CyberCrime", 10, createTooltip("Cybersecurity Threats", "- QCs break encryption.<br>- Harvest Now, Decrypt Later attacks.<br>- Sensitive data at risk.")],
+            ["Cryptography", 10, createTooltip("Cryptographic Disruption", "- Existing encryption obsolete.<br>- Quantum-safe transition costly.<br>- Impacts trade & commerce.")],
+            ["Finance", 10, createTooltip("Financial Vulnerabilities", "- Financial systems vulnerable.<br>- Market manipulation.<br>- Transaction security concerns.")],
+            ["Malicious Use", 10, createTooltip("Malicious Use", "- Enables cybercrime.<br>- Facilitates surveillance.<br>- Amplifies misinformation.")],
+            ["National Security", 10, createTooltip("National Security Risks", "- Encryption-breaking QCs threaten defense.<br>- Enables cyber-espionage.<br>- Exposes state secrets.")],
+            ["Tech Challenges", 10, createTooltip("Technical Challenges", "- Complex quantum software.<br>- Steep learning curve.<br>- Needs classical integration.")],
+            ["Inequality", 10, createTooltip("Accessibility & Inequality", "- High costs limit access.<br>- Significant tech skill limits access.<br>- Worsens tech & economic disparities.")],
+            ["Regulation", 10, createTooltip("Regulatory Challenges", "- Quantum evolution outpaces laws.<br>- Raises ethical dilemmas.<br>- Urgent need for adaptable frameworks.")]
+          ]);
+
+          options = {
+            title: "Quantum Computing Risks",
+            fontName: "Helvetica Neue",
+            fontSize: 26,
+            pieHole: 0.65,
+            pieStartAngle: -30,
+            tooltip: { isHtml: true },
+            chartArea: { width: "80%", height: "80%" },
+            pieSliceText: "label",
+            pieSliceTextStyle: { fontSize: 18, fontName: "Helvetica Neue", fontWeight: "500", color: "#FFFFFF" },
+            pieSliceTextPosition: "outside",
+            legend: "none",
+            slices: {
+              0: { color: "rgb(41, 62, 99)", selectedColor: "rgb(70, 92, 130)" },
+              1: { color: "rgb(41, 62, 99)" },
+              2: { color: "rgb(15, 113, 0)", selectedColor: "rgb(50, 140, 20)" },
+              3: { color: "rgb(153, 6, 6)" },
+              4: { color: "rgb(153, 6, 6)" },
+              5: { color: "rgb(41, 62, 99)" },
+              6: { color: "rgb(15, 113, 0)" },
+              7: { color: "rgb(15, 113, 0)" }
+            },
+            pieSliceBorderColor: "#FFFFFF",
+            enableInteractivity: true,
+          };
+
+          chart = new google.visualization.PieChart(document.getElementById("donutchart"));
+          chart.draw(chartData, options);
+
+          console.log("Chart successfully drawn!");
+        } catch (error) {
+          console.error("Error drawing chart:", error);
+        }
+      }
+
+      function createTooltip(title, content) {
+        return `<div style="padding: 15px; background-color: rgba(0, 0, 0, 0.9); color: white; border-radius: 8px; font-size: 22px; max-width: 650px; text-align: left;">
+                  <strong style="font-size: 24px; display: block; margin-bottom: 8px;">${title}</strong>
+                  ${content}
+                </div>`;
+      }
+
+      function showTooltip(event) {
+        let tooltip = document.getElementById("existential-tooltip");
+        tooltip.style.display = "block";
+        tooltip.style.top = event.clientY + 20 + "px";
+        tooltip.style.left = event.clientX + 20 + "px";
+      }
+
+      function hideTooltip() {
+        document.getElementById("existential-tooltip").style.display = "none";
+      }
+
+      function toggleArrows() {
+        let overlay = document.getElementById("arrows-overlay");
+        let button = document.getElementById("toggle-button");
+
+        if (overlay.style.display === "none" || overlay.style.display === "") {
+          overlay.style.display = "block";
+          button.textContent = "Hide Interdependencies";
+        } else {
+          overlay.style.display = "none";
+          button.textContent = "View Interdependencies";
+        }
+      }
+    </script>
+
+    <style>
+      /* Full 1920x1080 Canvas */
+      #chart-container {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+      }
+
+      /* Donut Chart */
+      #donutchart {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1200px;
+        height: 900px;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        z-index: 2;
+      }
+
+      /* Overlay */
+      #arrows-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        display: none;
+        z-index: 5;
+      }
+
+      /* Overlay Image */
+    #arrows-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background-image: url('your-overlay-graphic.png');
+    background-size: contain; /* ✅ Keeps proportions */
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+      /* Existential Risk Center */
+      #center-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 220px;
+        height: 220px;
+        background-color: black;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        z-index: 6;
+        cursor: pointer;
+      }
+
+      /* Existential Risk Tooltip */
+      #existential-tooltip {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        border-radius: 8px;
+        font-size: 22px;
+        max-width: 650px;
+        padding: 15px;
+        text-align: left;
+        display: none;
+        z-index: 10;
+      }
+
+      /* Toggle Button */
+      .toggle-button {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        padding: 12px 24px;
+        font-size: 18px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="chart-container">
+      <button id="toggle-button" class="toggle-button" onclick="toggleArrows()">View Interdependencies</button>
+
+      <!-- Donut Chart -->
+      <div id="donutchart"></div>
+
+      <!-- Overlay -->
+      <div id="arrows-overlay">
+        <img src="overlay.png" alt="Interdependency Overlay" id="overlay-image" />
+      </div>
+
+      <!-- Existential Risk -->
+      <div id="center-circle" onmouseover="showTooltip(event)" onmouseout="hideTooltip()">Existential<br>Risk</div>
+      <div id="existential-tooltip">
+        <strong>Existential Risk</strong><br>
+        - AI control problem amplified.<br>
+        - Decisions by autonomous systems without oversight.<br>
+        - <i>Deus Ex Machina</i> in control.
+      </div>
+    </div>
+  </body>
+</html>
