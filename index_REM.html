@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Keynote presentation viewer">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    
+    <title>Keynote</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Preload main script for better performance -->
+    <link rel="preload" href="assets/player/main.js" as="script">
+</head>
+<body id="body" class="dark-mode">
+
+    <div id="stageArea">
+        <div id="stage" class="stage" aria-hidden="true"></div>
+        <div id="hyperlinkPlane" class="stage" aria-hidden="true"></div>
+    </div>
+
+    <nav id="slideshowNavigator" aria-label="Slideshow Navigation"></nav>
+    <div id="slideNumberControl" aria-hidden="true"></div>
+    <div id="slideNumberDisplay"></div>
+    <div id="helpPlacard" role="alert"></div>
+
+    <div id="waitingIndicator" aria-hidden="true">
+        <div id="waitingSpinner" class="spinner"></div>
+    </div>
+
+   <script src="/QM_Infographic_REM/assets/player/main.js"></script>
+</body>
+</html>
+
