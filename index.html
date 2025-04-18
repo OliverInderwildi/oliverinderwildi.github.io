@@ -1,114 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oliver Inderwildi</title>
-    <meta name="description" content="Oliver Inderwildi - Author, Researcher, Manager, Speaker. Find my work, books, and research publications here."> 
-    <meta name="author" content="Oliver Inderwildi">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Oliver Inderwildi",
-      "url": "https://oliverinderwildi.github.io/",
-      "sameAs": [
-        "https://oliverinderwildi.medium.com",
-        "https://www.linkedin.com/in/oliverinderwildi/",
-        "https://x.com/oridw",
-        "https://www.youtube.com/channel/UCbxnovZBg0kLwLCak8x4RYQ",
-        "https://scholar.google.com/citations?user=zy1UxxUAAAAJ",
-        "https://www.researchgate.net/profile/Oliver-Inderwildi",
-        "https://orcid.org/0000-0002-4315-7839",
-        "https://oxford.academia.edu/OliverInderwildi",
-        "https://www.amazon.com/stores/Oliver-Inderwildi/author/B009EV4QCO",
-        "https://www.goodreads.com/author/show/6593248.Oliver_Inderwildi",
-        "https://www.barnesandnoble.com/s/%22Oliver%20Inderwildi%22"
-      ],
-      "jobTitle": "Author, Researcher, Speaker",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "University of Cambridge",
-        "url": "https://como.ceb.cam.ac.uk/people/ori20/"
-      },
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Centre on Regulation in Europe (CERRE)",
-          "url": "https://www.cerre.eu",
-          "description": "Co-Lead, Artificial Intelligence, Data Centres and the Electricity Grid"
-        },
-        {
-          "@type": "Organization",
-          "name": "Churchill College, University of Cambridge",
-          "description": "By-Fellow"
-        },
-        {
-          "@type": "Organization",
-          "name": "Royal Society of Chemistry",
-          "description": "Fellow (FRSC)"
-        }
-      ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oliver Inderwildi</title>
+  <meta name="description" content="Oliver Inderwildi - Author, Researcher, Speaker. Explore books, publications, and affiliations.">
+  <meta name="author" content="Oliver Inderwildi">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- OpenGraph / Twitter Cards -->
+  <meta property="og:title" content="Oliver Inderwildi">
+  <meta property="og:description" content="Explore the works and affiliations of Oliver Inderwildi – Author, Researcher, Speaker.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oliverinderwildi.github.io/">
+  <meta property="og:image" content="https://oliverinderwildi.github.io/assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Oliver Inderwildi">
+  <meta name="twitter:description" content="Explore the works and affiliations of Oliver Inderwildi – Author, Researcher, Speaker.">
+  <meta name="twitter:image" content="https://oliverinderwildi.github.io/assets/twitter-card.jpg">
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--fg);
+      transition: all 0.3s ease-in-out;
     }
-    </script>
+    :root[data-theme='light'] {
+      --bg: #ffffff;
+      --fg: #111111;
+    }
+    :root[data-theme='dark'] {
+      --bg: #111111;
+      --fg: #ffffff;
+    }
+    a { color: inherit; text-decoration: underline; }
+    .section { margin-bottom: 2rem; }
+    .toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--fg);
+      color: var(--bg);
+      border: none;
+      cursor: pointer;
+    }
+    iframe {
+      max-width: 100%;
+      border: none;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+    window.onload = () => {
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    }
+  </script>
 </head>
 <body>
-    <h1>Oliver Inderwildi</h1>
-    <p>Author | Researcher | Manager | Speaker</p>
+  <button class="toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+  <h1>Oliver Inderwildi</h1>
+  <p>Author | Researcher | Speaker | Manager</p>
 
-    <h2>Public Profiles & Social Media</h2>
+  <div class="section">
+    <h2>Affiliations</h2>
     <ul>
-        <li><a href="https://oliverinderwildi.medium.com">Medium</a></li>
-        <li><a href="https://www.linkedin.com/in/oliverinderwildi/">LinkedIn</a></li>
-        <li><a href="https://x.com/oridw">X (Twitter)</a></li>
-        <li><a href="https://www.youtube.com/channel/UCbxnovZBg0kLwLCak8x4RYQ">YouTube</a></li>
+      <li>University of Cambridge - <a href="https://como.ceb.cam.ac.uk/people/ori20/">Centre for Advanced Research</a></li>
+      <li><a href="https://www.cares.cam.ac.uk/personal-profiles/?profile_id=218">Cambridge CARES</a></li>
+      <li><a href="https://cerre.eu/biographies/oliver-inderwildi/">Co-Lead, AI & Electricity Grid, CERRE</a></li>
+      <li><a href="https://www.rsc.org/journals-books-databases/about-journals/energy-environmental-science/#AB">Advisory Board Member, Energy & Environmental Science (RSC)</a></li>
+      <li>By-Fellow, Churchill College, University of Cambridge</li>
+      <li>Fellow, Royal Society of Chemistry</li>
     </ul>
+  </div>
 
-    <h2>University Affiliations</h2>
+  <div class="section">
+    <h2>Publications & Books</h2>
     <ul>
-        <li><a href="https://como.ceb.cam.ac.uk/people/ori20/">University of Cambridge</a></li>
-        <li><a href="https://www.cares.cam.ac.uk/personal-profiles/?profile_id=218">Cambridge CARES</a></li>
+      <li><a href="https://www.amazon.com/stores/Oliver-Inderwildi/author/B009EV4QCO">Amazon Author Page</a></li>
+      <li><a href="https://www.goodreads.com/author/show/6593248.Oliver_Inderwildi">Goodreads</a></li>
+      <li><a href="https://link.springer.com/search?query=Oliver+Inderwildi&content-type=book">SpringerNature</a></li>
+      <li><a href="https://oliverinderwildi.github.io/Publications.html">Full list of publications</a></li>
     </ul>
+  </div>
 
-    <h2>Other Affiliations & Honours</h2>
+  <div class="section">
+    <h2>Newsletter</h2>
+    <iframe src="https://substack.com/embed" height="180" width="100%" title="Newsletter Embed"></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Book Trailer</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UCbxnovZBg0kLwLCak8x4RYQ" title="YouTube Book Trailer" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Social & Research Profiles</h2>
     <ul>
-        <li>Co-Lead, <em>Artificial Intelligence, Data Centres and the Electricity Grid</em> at <a href="https://www.cerre.eu">CERRE</a></li>
-        <li>Fellow of the <a href="https://www.rsc.org/membership-and-community/membership/fellowship/">Royal Society of Chemistry (FRSC)</a></li>
-        <li>By-Fellow at <a href="https://www.chu.cam.ac.uk/">Churchill College</a>, University of Cambridge</li>
+      <li><a href="https://oliverinderwildi.medium.com">Medium</a></li>
+      <li><a href="https://www.linkedin.com/in/oliverinderwildi/">LinkedIn</a></li>
+      <li><a href="https://x.com/oridw">Twitter</a></li>
+      <li><a href="https://scholar.google.com/citations?user=zy1UxxUAAAAJ">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-4315-7839">ORCID</a></li>
+      <li><a href="https://www.researchgate.net/profile/Oliver-Inderwildi">ResearchGate</a></li>
+      <li><a href="https://oxford.academia.edu/OliverInderwildi">Academia.edu</a></li>
     </ul>
+  </div>
 
-    <h2>Books</h2>
-    <ul>
-        <li><a href="https://link.springer.com/search?query=Oliver+Inderwildi&content-type=book">SpringerNature</a></li>
-        <li><a href="https://www.amazon.com/stores/Oliver-Inderwildi/author/B009EV4QCO">Amazon Author Page</a></li>
-        <li><a href="https://www.goodreads.com/author/show/6593248.Oliver_Inderwildi">Goodreads</a></li>
-        <li><a href="https://www.barnesandnoble.com/s/%22Oliver%20Inderwildi%22">Barnes & Noble</a></li>
-    </ul>
-
-    <h2>Science & Research</h2>
-    <ul>
-        <li><a href="https://scholar.google.com/citations?user=zy1UxxUAAAAJ">Google Scholar</a></li>
-        <li><a href="https://www.researchgate.net/profile/Oliver-Inderwildi">ResearchGate</a></li>
-        <li><a href="https://orcid.org/0000-0002-4315-7839">ORCID</a></li>
-        <li><a href="https://oxford.academia.edu/OliverInderwildi">Academia.edu</a></li>
-        <li><a href="https://www.scopus.com/authid/detail.uri?authorId=10143218500">Scopus</a></li>
-        <li><a href="https://www.webofscience.com/wos/author/record/S-9621-2019">Web of Science Researcher ID</a></li>
-        <li><a href="https://www.semanticscholar.org/author/Oliver-Richard-Inderwildi/6043368">Semantic Scholar</a></li>
-        <li><a href="https://app.dimensions.ai/details/entities/publication/author/ur.01344463060.17">SpringerNature ID</a></li>
-        <li><a href="http://oliverinderwildi.github.io/Publications.html">Full list of publications</a></li>
-    </ul>
-
-    <h2>Education</h2>
-    <ul>
-        <li>MSc, <a href="https://www.uva.nl/en">University of Amsterdam</a></li>
-        <li>PhD in Computational Modelling & Environmental Engineering, <a href="https://www.uni-heidelberg.de/en">University of Heidelberg</a></li>
-        <li>Postgraduate Diploma in Economics & International Relations, <a href="https://www.lse.ac.uk/">London School of Economics (LSE)</a></li>
-        <li>MBA in Strategy & Finance, <a href="https://www.mannheim-business-school.com/en/">Mannheim Business School</a> and <a href="https://www.essec.edu/en/">ESSEC Paris</a></li>
-    </ul>
-
-    <a href="https://www.google.com/search?q=Oliver+Inderwildi" style="display: none;">Google Knowledge Panel</a>
-    <a href="https://www.wikidata.org/wiki/Q54254850" style="display: none;">Wikidata Entry for Oliver Inderwildi</a>
 </body>
 </html>
