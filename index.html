@@ -1,78 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oliver Inderwildi</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="description" content="Oliver Inderwildi - Author, Researcher, Manager, Speaker. Find my work, books, and research publications here."> 
-    <meta name="author" content="Oliver Inderwildi">
-    <meta property="og:title" content="Oliver Inderwildi">
-    <meta property="og:description" content="Techno-economic strategist | Author | Researcher | Speaker">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://oliverinderwildi.github.io/">
-    <meta property="og:image" content="https://oliverinderwildi.github.io/assets/Cover_EnergyTransportEnvirnoment.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oliver Inderwildi">
-    <meta name="twitter:description" content="Techno-economic strategist | Author | Speaker | Advisor">
-    <meta name="twitter:image" content="https://oliverinderwildi.github.io/assets/Cover_EnergyTransportEnvirnoment.webp">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Oliver Inderwildi",
-      "url": "https://oliverinderwildi.github.io/",
-      "sameAs": [
-        "https://oliverinderwildi.medium.com",
-        "https://www.linkedin.com/in/oliverinderwildi/",
-        "https://x.com/oridw",
-        "https://www.youtube.com/channel/UCbxnovZBg0kLwLCak8x4RYQ",
-        "https://scholar.google.com/citations?user=zy1UxxUAAAAJ",
-        "https://www.researchgate.net/profile/Oliver-Inderwildi",
-        "https://orcid.org/0000-0002-4315-7839",
-        "https://oxford.academia.edu/OliverInderwildi",
-        "https://www.amazon.com/stores/Oliver-Inderwildi/author/B009EV4QCO",
-        "https://www.goodreads.com/author/show/6593248.Oliver_Inderwildi",
-        "https://uxmag.com/contributors/oliver-inderwildi"
-      ],
-      "jobTitle": "Techno-Economic Strategist",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "University of Cambridge",
-        "url": "https://como.ceb.cam.ac.uk/people/ori20/"
-      }
-    }
-    </script>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #fff; color: #000; transition: background 0.4s, color 0.4s; }
-        .dark-mode { background: #111; color: #f0f0f0; }
-        .toggle { margin: 1rem 0; }
-        img.book-cover { max-width: 200px; height: auto; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-        .carousel { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
-        .carousel div { scroll-snap-align: start; flex: 0 0 auto; text-align: center; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oliver Inderwildi</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Oliver Inderwildi</h1>
-    <p>Author | Techno-Economic Strategist | Speaker | By-Fellow Churchill College</p>
-    <div class="toggle">
-        <button onclick="document.body.classList.toggle('dark-mode')">🌙 Toggle Dark/Light Mode</button>
+  <h1>Oliver Inderwildi</h1>
+  <p>Author | Techno-Economic Strategist | Speaker | By-Fellow Churchill College</p>
+
+  <button id="theme-toggle">🌙 Toggle Dark/Light Mode</button>
+
+  <h2>Books</h2>
+  <div class="book-carousel">
+    <div class="book">
+      <img src="images/Cover_EnergyTransportEnvirnoment.webp" alt="Energy Transport & the Environment" />
+      <a href="https://www.amazon.com/Energy-Transport-Environment-Addressing-Sustainable/dp/1447127161" target="_blank">Energy, Transport & the Environment</a>
     </div>
-    <h2>Books</h2>
-    <div class="carousel">
-        <div>
-            <img src="Cover_EnergyTransportEnvirnoment.webp" class="book-cover" alt="Energy, Transport & Environment">
-            <p><a href="https://www.amazon.com/Energy-Transport-Environment-Addressing-Sustainable/dp/1447127161">Energy, Transport & the Environment</a></p>
-        </div>
-        <div>
-            <img src="Cover_IntelligentDecarbonisation.jpeg" class="book-cover" alt="Intelligent Decarbonisation">
-            <p><a href="https://www.amazon.com/Intelligent-Decarbonisation_-Can-Artificial-Intelligence-and-Cyber_Physical-Systems-Help-Achieve-Climate-Mitigation-Targets-_Lecture-Notes-in-Energy_-86_/dp/3030862143">Intelligent Decarbonisation</a></p>
-        </div>
-        <div>
-            <img src="Cover_FutureofMobilityRoadmap.jpeg" class="book-cover" alt="Future of Mobility Roadmap">
-            <p><a href="https://www.amazon.com/-/es/Oliver-Inderwildi-ebook/dp/B0CTMW7GTN">Future of Mobility Roadmap</a></p>
-        </div>
+    <div class="book">
+      <img src="images/Cover_IntelligentDecarbonisation.jpeg" alt="Intelligent Decarbonisation" />
+      <a href="https://www.amazon.com/Intelligent-Decarbonisation_-Can-Artificial-Intelligence-and-Cyber_Physical-Systems-Help-Achieve-Climate-Mitigation-Targets-_Lecture-Notes-in-Energy_-86_/dp/3030862143" target="_blank">Intelligent Decarbonisation</a>
     </div>
+    <div class="book">
+      <img src="images/Cover_FutureofMobilityRoadmap.jpeg" alt="Future of Mobility Roadmap" />
+      <a href="https://www.amazon.com/-/es/Oliver-Inderwildi-ebook/dp/B0CTMW7GTN" target="_blank">Future of Mobility Roadmap</a>
+    </div>
+  </div>
+
+  <h2><a href="publications.html">View Full Publications List →</a></h2>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>

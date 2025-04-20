@@ -1,0 +1,23 @@
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+.dark {
+  background: #111;
+  color: white;
+}
+.book-carousel {
+  display: flex;
+  gap: 20px;
+}
+.book img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+.book a {
+  display: block;
+  margin-top: 5px;
+}
