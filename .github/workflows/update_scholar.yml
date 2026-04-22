@@ -1,0 +1,32 @@
+from playwright.sync_api import sync_playwright
+import time
+import datetime
+
+GITHUB_URL = "https://oliverinderwildi.github.io/QuantumDeadline/TheQuantumDeadline_OliverInderwildi.html"
+
+def log(msg):
+    ts = datetime.datetime.now().isoformat(timespec="seconds")
+    print(f"[{ts}] {msg}")
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+    context = browser.new_context()
+    page = context.new_page()
+
+    log("Opening GitHub page")
+    page.goto(GITHUB_URL, wait_until="networkidle")
+
+    log("Simulating reading behaviour")
+    for y in [400, 800, 1200, 1600]:
+        page.mouse.wheel(0, y)
+        time.sleep(3)
+
+    log("READY FOR MANUAL ACTION")
+    log("👉 Please click the Medium link yourself in the browser window")
+    log("👉 Read on Medium for at least 1–2 minutes")
+    log("👉 Then return here and press ENTER")
+
+    input()
+
+    log("Session complete — close browser")
+    browser.close()
