@@ -112,11 +112,28 @@ html {scroll-behavior:smooth;}
 body {font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:18px;-webkit-font-smoothing:antialiased;}
 h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.15;}
 .container {max-width:1100px;margin:0 auto;padding:0 2rem;}
-.site-nav {position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2.5rem;border-bottom:1px solid rgba(255,255,255,0.08);}
-.nav-brand {font-family:'JetBrains Mono',monospace;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;}
-.nav-links {display:flex;gap:2rem;list-style:none;}
-.nav-links a {font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover {color:var(--cream);}
+/* ── Nav ── */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(16,14,12,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,191,176,0.12);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nav-left,.nav-right{display:flex;align-items:center;gap:0.25rem;}
+.nav-center{position:absolute;left:50%;transform:translateX(-50%);}
+.nav-center a{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--cream);text-decoration:none;letter-spacing:0.02em;}
+.nav-center a:hover{color:var(--gold);}
+.nav-link{font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;padding:0.5rem 0.85rem;border-radius:6px;transition:all .2s ease;}
+.nav-link:hover{color:var(--cream);background:rgba(184,146,42,0.12);}
+.nav-link.active{color:var(--gold);}
+.nav-link.library{color:#5b8a72;border:1px solid #3d6b52;background:rgba(91,138,114,0.08);}
+.nav-link.library:hover{background:rgba(91,138,114,0.18);color:#7dc4a0;}
+.nav-dropdown{position:relative;}
+.nav-dropdown-trigger{cursor:pointer;display:flex;align-items:center;gap:0.35rem;}
+.nav-dropdown-trigger::after{content:'';display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .2s ease;}
+.nav-dropdown:hover .nav-dropdown-trigger::after{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 0.5rem);left:50%;transform:translateX(-50%);background:var(--charcoal-mid);border:1px solid rgba(200,191,176,0.15);border-radius:10px;padding:0.5rem;min-width:180px;opacity:0;visibility:hidden;transition:all .2s ease;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;}
+.nav-dropdown-menu a{display:block;padding:0.6rem 1rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;border-radius:6px;transition:all .2s ease;}
+.nav-dropdown-menu a:hover{color:var(--cream);background:rgba(184,146,42,0.12);}
+.nav-dropdown-menu a.active{color:var(--gold);}
+.dropdown-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(200,191,176,0.35);padding:0.4rem 1rem 0.2rem;}
 .site-hero {position:relative;background:var(--charcoal);min-height:88vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
 .site-hero::after {content:'';position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top,rgba(24,20,16,0.6),transparent);pointer-events:none;}
 .hero-content {position:relative;z-index:2;padding:0 2.5rem;max-width:900px;margin:8rem auto 6rem;}
@@ -190,23 +207,35 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
 .footer-links a {font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,191,176,0.35);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover {color:rgba(200,191,176,0.7);}
 @media (max-width:900px) {.about-inner {grid-template-columns:1fr;gap:1.5rem;}.series-grid {grid-template-columns:1fr !important;max-width:100% !important;}.series-card {border-right:none;border-bottom:1px solid var(--rule);}.series-card:last-child {border-bottom:none;}.books-grid {grid-template-columns:repeat(2,1fr);}.presence-grid {grid-template-columns:repeat(3,1fr);}}
-@media (max-width:600px) {.hero-content {padding:0 1.5rem;margin:7rem auto 5rem;}.site-nav {padding:1.25rem 1.5rem;}.nav-links {display:none;}.tab-bar{flex-wrap:wrap;}.books-grid {grid-template-columns:1fr;}.presence-grid {grid-template-columns:1fr;}.footer-inner {flex-direction:column;text-align:center;}}
+@media (max-width:600px) {.hero-content {padding:0 1.5rem;margin:7rem auto 5rem;}.site-nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--charcoal);}.nav-inner{flex-wrap:wrap;justify-content:center;gap:0.5rem;height:auto;padding:0.75rem 1rem;}.nav-center{position:static;transform:none;}.nav-left,.nav-right{display:none;}.tab-bar{flex-wrap:wrap;}.books-grid {grid-template-columns:1fr;}.presence-grid {grid-template-columns:1fr;}.footer-inner {flex-direction:column;text-align:center;}}
   </style>
 </head>
 <body>
 
   <header class="site-hero">
     <nav class="site-nav">
-      <a href="#" class="nav-brand">Oliver Inderwildi</a>
-      <ul class="nav-links">
-        <li><a href="#series">Articles</a></li>
-        <li><a href="#books">Books</a></li>
-        <li><a href="#library">Library</a></li>
-        <li><a href="/GoogleScholar/">Academic Papers</a></li>
-        <li><a href="https://www.youtube.com/@oliverinderwildi" target="_blank" rel="noopener">Videos</a></li>
-        <li><a href="/Interviews/">Interviews</a></li>
-        <li><a href="#presence">Contact</a></li>
-      </ul>
+      <div class="nav-inner">
+        <div class="nav-left">
+          <a href="/GoogleScholar/" class="nav-link library">Library</a>
+        </div>
+        <div class="nav-center">
+          <a href="/">Dr Oliver Inderwildi</a>
+        </div>
+        <div class="nav-right">
+          <a href="#series" class="nav-link">Articles</a>
+          <a href="#books" class="nav-link">Books</a>
+          <div class="nav-dropdown">
+            <a class="nav-link nav-dropdown-trigger">In the Media</a>
+            <div class="nav-dropdown-menu">
+              <div class="dropdown-label">Media &amp; Appearances</div>
+              <a href="/Interviews/">Interviews</a>
+              <a href="https://www.youtube.com/@oliverinderwildi" target="_blank" rel="noopener">Videos</a>
+              <a href="/Lectures/FestivalCircularEconomy/">Lectures</a>
+            </div>
+          </div>
+          <a href="#presence" class="nav-link">Contact</a>
+        </div>
+      </div>
     </nav>
     <div class="hero-content">
       <p class="hero-eyebrow">Senior Fellow · University of Cambridge</p>
