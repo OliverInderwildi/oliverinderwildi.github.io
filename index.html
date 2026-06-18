@@ -140,6 +140,16 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
 .nav-link.active{color:var(--gold);}
 .nav-link.library{color:#5b8a72;border:1px solid #3d6b52;background:rgba(91,138,114,0.08);}
 .nav-link.library:hover{background:rgba(91,138,114,0.18);color:#7dc4a0;}
+.nav-link.monitor {  color: #b5474a;
+  border: 1px solid #7a2e30;
+  border-radius: 6px;
+  padding: 8px 14px;
+  background: rgba(181, 71, 74, 0.08);
+  margin-left: 8px; /* drop if .nav-left already uses flex gap */
+}
+.nav-link.monitor:hover {
+  background: rgba(181, 71, 74, 0.16);
+}
 .nav-dropdown{position:relative;}
 .nav-dropdown-trigger{cursor:pointer;display:flex;align-items:center;gap:0.35rem;}
 .nav-dropdown-trigger::after{content:'';display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .2s ease;}
