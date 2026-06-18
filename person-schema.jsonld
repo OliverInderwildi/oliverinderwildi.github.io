@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Oliver Inderwildi",
+  "givenName": "Oliver",
+  "familyName": "Inderwildi",
+  "alternateName": "Oliver R. Inderwildi",
+  "honorificSuffix": "PhD, MBA",
+  "jobTitle": "Senior Visiting Scientist & Principal Consultant",
+  "description": "Researcher, author and technologist working at the intersection of technology, policy, economics and finance, with a focus on energy, sustainability and decarbonisation.",
+  "url": "https://oliverinderwildi.github.io/Resume/",
+  "image": "https://oliverinderwildi.github.io/assets/oliver-inderwildi.jpg",
+  "email": "mailto:oliver.inderwildi@gmail.com",
+  "nationality": "German",
+  "knowsLanguage": ["German", "English", "Dutch", "French"],
+  "knowsAbout": ["Computational Modeling", "Energy Systems", "Complexity", "Artificial Intelligence", "Quantum Technology", "Climate Policy", "Decarbonisation", "Sustainability", "Green Finance", "ESG", "Corporate Finance", "Technology Scouting", "Circular Economy", "Technology for Global Challenges", "Consciousness Studies", "Philosophy of Mind"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "University of Cambridge (Cambridge Centre for Advanced Research & Education in Singapore)"
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Heidelberg University" },
+    { "@type": "CollegeOrUniversity", "name": "University of Amsterdam" },
+    { "@type": "CollegeOrUniversity", "name": "University of Cambridge" },
+    { "@type": "CollegeOrUniversity", "name": "London School of Economics and Political Science" },
+    { "@type": "CollegeOrUniversity", "name": "ESSEC Business School" },
+    { "@type": "CollegeOrUniversity", "name": "Mannheim Business School" },
+    { "@type": "EducationalOrganization", "name": "World Economic Forum — Global Leadership Fellows Programme" }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Doctorate",
+      "name": "PhD, Theoretical Chemistry & Chemical Engineering",
+      "educationalLevel": "PhD",
+      "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Heidelberg University" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "MBA",
+      "name": "ESSEC-Mannheim Executive MBA (Franco-German), General Management",
+      "recognizedBy": [
+        { "@type": "CollegeOrUniversity", "name": "ESSEC Business School" },
+        { "@type": "CollegeOrUniversity", "name": "Mannheim Business School" }
+      ]
+    }
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=qS2dYUAAAAAJ",
+    "https://orcid.org/0000-0002-4315-7839",
+    "https://www.wikidata.org/wiki/Q58555766",
+    "https://oliverinderwildi.github.io/",
+    "https://github.com/oliverinderwildi",
+    "https://oliverinderwildi.medium.com",
+    "https://www.linkedin.com/in/oliverinderwildi/",
+    "https://x.com/oridw",
+    "https://about.me/oliverinderwildi",
+    "https://www.researchgate.net/profile/Oliver-Inderwildi",
+    "https://www.scopus.com/authid/detail.uri?authorId=10143218500",
+    "https://www.semanticscholar.org/author/6043368",
+    "https://www.youtube.com/channel/UCbxnovZBg0kLwLCak8x4RYQ",
+    "https://www.amazon.com/Oliver-Inderwildi/e/B009EV4QCO"
+  ]
+}
