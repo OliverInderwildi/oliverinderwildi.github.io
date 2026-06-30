@@ -140,16 +140,10 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
 .nav-link.active{color:var(--gold);}
 .nav-link.library{color:#5b8a72;border:1px solid #3d6b52;background:rgba(91,138,114,0.08);}
 .nav-link.library:hover{background:rgba(91,138,114,0.18);color:#7dc4a0;}
-.nav-link.monitor {  color: #b5474a;
-  border: 1px solid #7a2e30;
-  border-radius: 6px;
-  padding: 8px 14px;
-  background: rgba(181, 71, 74, 0.08);
-  margin-left: 8px; /* drop if .nav-left already uses flex gap */
-}
-.nav-link.monitor:hover {
-  background: rgba(181, 71, 74, 0.16);
-}
+.nav-link.monitor{color:var(--gold);border:1px solid rgba(184,146,42,0.4);background:rgba(184,146,42,0.1);}
+.nav-link.monitor:hover{background:rgba(184,146,42,0.2);color:#d9b347;}
+.nav-link.infographics{color:#8a7bc8;border:1px solid rgba(138,123,200,0.4);background:rgba(138,123,200,0.1);}
+.nav-link.infographics:hover{background:rgba(138,123,200,0.2);color:#a899e0;}
 .nav-dropdown{position:relative;}
 .nav-dropdown-trigger{cursor:pointer;display:flex;align-items:center;gap:0.35rem;}
 .nav-dropdown-trigger::after{content:'';display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .2s ease;}
@@ -165,8 +159,7 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
 .hero-content {position:relative;z-index:2;padding:0 2.5rem;max-width:900px;margin:8rem auto 6rem;}
 .hero-eyebrow {font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
 .hero-eyebrow::after {content:'';display:inline-block;width:3rem;height:1px;background:var(--gold);opacity:0.6;}
-.hero-video{position:relative;width:100%;max-width:720px;aspect-ratio:16/9;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,0.1);}
-.hero-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;color:var(--cream);line-height:1.05;margin-bottom:1.25rem;}
 .hero-roles {font-family:'Source Serif 4',serif;font-size:clamp(1rem,2vw,1.2rem);font-weight:300;color:var(--cream-dim);margin-bottom:2rem;letter-spacing:0.02em;}
 .hero-roles span {color:rgba(200,191,176,0.45);margin:0 0.5rem;}
 .hero-description {font-size:1.1rem;font-weight:300;color:rgba(200,191,176,0.75);max-width:560px;line-height:1.75;font-style:italic;border-left:2px solid var(--gold);padding-left:1.25rem;}
@@ -207,6 +200,25 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
 .card-read {font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:0.5rem;}
 .card-read::after {content:'\2192';transition:transform 0.2s;}
 .series-card:hover .card-read::after {transform:translateX(4px);}
+/* ── Media teasers (Videos / Infographics) ── */
+.media-section{padding:5rem 0;}
+.media-section.warm{background:var(--paper-warm);}
+.media-section.plain{background:var(--paper);border-top:1px solid var(--rule);}
+.media-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;padding-bottom:1rem;border-bottom:1px solid var(--rule);}
+.media-head .section-title{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.media-more{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--rule);padding-bottom:0.2rem;transition:color .2s,border-color .2s;}
+.media-more:hover{color:var(--ink);border-color:var(--ink);}
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+.video-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);transition:box-shadow .3s,transform .3s;}
+.video-card:hover{box-shadow:0 12px 40px rgba(26,23,20,0.18);transform:translateY(-4px);}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--charcoal);}
+.video-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(16,14,12,0.7);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.video-card:hover .play-badge{background:var(--gold);}
+.play-badge::after{content:'';display:block;width:0;height:0;border-left:20px solid var(--cream);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px;transition:border-left-color .2s;}
+.video-card:hover .play-badge::after{border-left-color:var(--charcoal);}
+.video-meta{padding:1.5rem 1.75rem 1.75rem;}
+.infographic-card .card-tag{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#2f6f5e;background:#dfeee8;padding:0.25rem 0.6rem;border-radius:4px;display:inline-block;margin-bottom:1rem;}
 .books-section {background:var(--paper);padding:5rem 0;border-top:1px solid var(--rule);}
 .books-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
 .book-card {text-decoration:none;color:inherit;display:block;}
@@ -232,7 +244,7 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
 .footer-links {display:flex;gap:1.5rem;list-style:none;}
 .footer-links a {font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,191,176,0.35);text-decoration:none;transition:color 0.2s;}
 .footer-links a:hover {color:rgba(200,191,176,0.7);}
-@media (max-width:900px) {.about-inner {grid-template-columns:1fr;gap:1.5rem;}.series-grid {grid-template-columns:1fr !important;max-width:100% !important;}.series-card {border-right:none;border-bottom:1px solid var(--rule);}.series-card:last-child {border-bottom:none;}.books-grid {grid-template-columns:repeat(2,1fr);}.presence-grid {grid-template-columns:repeat(3,1fr);}}
+@media (max-width:900px) {.about-inner {grid-template-columns:1fr;gap:1.5rem;}.series-grid {grid-template-columns:1fr !important;max-width:100% !important;}.series-card {border-right:none;border-bottom:1px solid var(--rule);}.series-card:last-child {border-bottom:none;}.video-grid {grid-template-columns:1fr;}.books-grid {grid-template-columns:repeat(2,1fr);}.presence-grid {grid-template-columns:repeat(3,1fr);}}
 @media (max-width:600px) {.hero-content {padding:0 1.5rem;margin:7rem auto 5rem;}.site-nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--charcoal);}.nav-inner{flex-wrap:wrap;justify-content:center;gap:0.5rem;height:auto;padding:0.75rem 1rem;}.nav-center{position:static;transform:none;}.nav-left,.nav-right{display:none;}.tab-bar{flex-wrap:wrap;}.books-grid {grid-template-columns:1fr;}.presence-grid {grid-template-columns:1fr;}.footer-inner {flex-direction:column;text-align:center;}}
   </style>
   <link rel="me" href="https://www.amazon.es/stores/author/B009EV4QCO/about" />
@@ -252,6 +264,7 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
         <div class="nav-left">
           <a href="/GoogleScholar/" class="nav-link library">Library</a>
           <a href="/Monitor/" class="nav-link monitor">Monitor</a>
+          <a href="/Infographics/" class="nav-link infographics">Infographics</a>
         </div>
         <div class="nav-center">
           <a href="/">Dr Oliver Inderwildi</a>
@@ -274,7 +287,7 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
     </nav>
     <div class="hero-content">
       <p class="hero-eyebrow">Senior Fellow · University of Cambridge</p>
-      <div class="hero-video"><iframe src="https://www.youtube.com/embed/yNAoA0j5kSs" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="Dr. Oliver Inderwildi"></iframe></div>
+      <h1 class="hero-name">Dr. Oliver Inderwildi</h1>
       <p class="hero-roles">Researcher <span>·</span> Author <span>·</span> Technologist</p>
       <p class="hero-description">Writing at the intersection of quantum computing, artificial intelligence, energy systems, and geopolitics — from Cambridge to the global stage.</p>
       <div class="hero-cta">
@@ -301,6 +314,62 @@ h1,h2,h3 {font-family:'Playfair Display',Georgia,serif;font-weight:700;line-heig
           <br><br>
           <span style="font-size:0.82rem;font-style:italic;color:rgba(200,191,176,0.55);">Former Senior Research Fellow at the Smith School of Enterprise and the Environment, University of Oxford.</span>
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="media-section warm" id="videos">
+    <div class="container">
+      <div class="media-head">
+        <div>
+          <p class="section-label">Watch</p>
+          <h2 class="section-title">Videos</h2>
+        </div>
+        <a href="https://www.youtube.com/@oliverinderwildi" target="_blank" rel="noopener noreferrer" class="media-more">More on YouTube →</a>
+      </div>
+      <div class="video-grid">
+        <a href="https://www.youtube.com/watch?v=yNAoA0j5kSs" target="_blank" rel="noopener noreferrer" class="video-card">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/yNAoA0j5kSs/hqdefault.jpg" alt="Dr. Oliver Inderwildi — featured talk" loading="lazy" />
+            <span class="play-badge" aria-hidden="true"></span>
+          </div>
+          <div class="video-meta">
+            <p class="card-part">#FeaturedTalk · #YouTube</p>
+            <h3 class="card-title">Quantum Computing, AI &amp; the Future of Technology</h3>
+            <span class="card-read">Watch on YouTube</span>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@oliverinderwildi" target="_blank" rel="noopener noreferrer" class="video-card">
+          <div class="video-thumb" style="display:flex;align-items:center;justify-content:center;">
+            <img src="icons/youtube.jpg" alt="YouTube channel" loading="lazy" style="width:auto;height:64px;object-fit:contain;" />
+          </div>
+          <div class="video-meta">
+            <p class="card-part">#Channel · #Talks · #Interviews</p>
+            <h3 class="card-title">More Talks &amp; Appearances</h3>
+            <span class="card-read">Visit the Channel</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="media-section plain" id="infographics">
+    <div class="container">
+      <div class="media-head">
+        <div>
+          <p class="section-label">Explore</p>
+          <h2 class="section-title">Infographics</h2>
+        </div>
+        <a href="/Infographics/" class="media-more">View All Infographics →</a>
+      </div>
+      <div class="series-grid" style="grid-template-columns:repeat(2,1fr);">
+        <a href="/Infographics/LLM_compute_energy_explainer.html" class="series-card infographic-card">
+          <span class="card-tag">Interactive</span>
+          <p class="card-part">#AI · #Energy · #Compute</p>
+          <h3 class="card-title">Capability Bought With Energy</h3>
+          <p class="card-excerpt">An interactive explainer on how per-query energy scales with generated tokens — and why reasoning models' hidden chain-of-thought can cost many times a direct answer. Drag the slider and see where real models land.</p>
+          <span class="card-read">Open Infographic</span>
+        </a>
       </div>
     </div>
   </section>
